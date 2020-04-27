@@ -338,7 +338,34 @@ public class DeckofCardsTest {
 
     @Test
     public void testAddingToPiles4() {
+        //Test Case 4: pile with adding multiple times valid cards
+        Deck deck = DeckofCards.shuffleCards(1);
+        String _deckID = deck.getDeckID();
 
+        String pileName = "Player1";
+
+        DeckofCards.drawACard(deck, 3);
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
+
+        DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
+        assertEquals(deck.getDeckID(), _deckID);
+        assertEquals(deck.getRemainingCards(), 49);
+
+        assertEquals(deck.getPiles().size(), 1);
+        Pile pile = deck.getPiles().get(0);
+        assertEquals(pile.getName(), pileName);
+        assertEquals(pile.getRemainingCards(), 3);
+
+        DeckofCards.drawACard(deck, 5);
+        codes = DeckofCards.generateCodesFromCards(deck.getCards());
+        DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes.subList(0,3), ","));
+        assertEquals(deck.getDeckID(), _deckID);
+        assertEquals(deck.getRemainingCards(), 44);
+
+        assertEquals(deck.getPiles().size(), 1);
+        pile = deck.getPiles().get(0);
+        assertEquals(pile.getName(), pileName);
+        assertEquals(pile.getRemainingCards(), 6);
     }
 
     @Test
