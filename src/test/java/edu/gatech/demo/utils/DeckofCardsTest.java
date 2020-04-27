@@ -302,10 +302,7 @@ public class DeckofCardsTest {
 
         //Draw cards
         DeckofCards.drawACard(deck, 2);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         //Add to pile
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
@@ -327,10 +324,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -357,10 +351,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -374,10 +365,7 @@ public class DeckofCardsTest {
         //Player2
         pileName = "Player2";
         DeckofCards.drawACard(deck, 2);
-        cards = deck.getCards();
-        codes.clear();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -439,10 +427,7 @@ public class DeckofCardsTest {
         String pileName1 = "Player1";
 
         DeckofCards.drawACard(deck, 5);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName1, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -518,10 +503,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 7);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -593,9 +575,7 @@ public class DeckofCardsTest {
 
         DeckofCards.drawACard(deck, 3);
         List<Card> cards = DeckofCards.deepCopyCards(deck.getCards());
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -621,9 +601,7 @@ public class DeckofCardsTest {
 
         DeckofCards.drawACard(deck, 3);
         List<Card> cards = DeckofCards.deepCopyCards(deck.getCards());
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -643,9 +621,7 @@ public class DeckofCardsTest {
 
         DeckofCards.drawACard(deck, 3);
         cards = DeckofCards.deepCopyCards(deck.getCards());
-        codes.clear();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName2, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -685,10 +661,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -716,10 +689,7 @@ public class DeckofCardsTest {
             String pileName = "Player1";
 
             DeckofCards.drawACard(deck, 3);
-            List<Card> cards = deck.getCards();
-            List<String> codes = new ArrayList<>();
-            for (Card card : cards)
-                codes.add(card.getCodeValue());
+            List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
             DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
             assertEquals(deck.getDeckID(), _deckID);
@@ -750,10 +720,7 @@ public class DeckofCardsTest {
             String pileName = "Player1";
 
             DeckofCards.drawACard(deck, 3);
-            List<Card> cards = deck.getCards();
-            List<String> codes = new ArrayList<>();
-            for (Card card : cards)
-                codes.add(card.getCodeValue());
+            List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
             DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
             assertEquals(deck.getDeckID(), _deckID);
@@ -782,10 +749,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -813,10 +777,7 @@ public class DeckofCardsTest {
             String pileName = "Player1";
 
             DeckofCards.drawACard(deck, 3);
-            List<Card> cards = deck.getCards();
-            List<String> codes = new ArrayList<>();
-            for (Card card : cards)
-                codes.add(card.getCodeValue());
+            List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
             DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
             assertEquals(deck.getDeckID(), _deckID);
@@ -845,10 +806,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -876,10 +834,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);
@@ -907,10 +862,7 @@ public class DeckofCardsTest {
         String pileName = "Player1";
 
         DeckofCards.drawACard(deck, 3);
-        List<Card> cards = deck.getCards();
-        List<String> codes = new ArrayList<>();
-        for (Card card : cards)
-            codes.add(card.getCodeValue());
+        List<String> codes = DeckofCards.generateCodesFromCards(deck.getCards());
 
         DeckofCards.addingToPiles(deck, pileName, StringUtils.join(codes, ","));
         assertEquals(deck.getDeckID(), _deckID);

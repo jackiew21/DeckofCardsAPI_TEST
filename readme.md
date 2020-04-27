@@ -11,7 +11,7 @@ How to Run?
 Run DeckofCardsTest directly
 
 Test Report: 
-In total 39 Test Cases, 38 Test Cases Passed, 1 Failed (Time Spent: 10s)
+In total 39 Test Cases, 38 Test Cases Passed, 1 Failed (Time Spent: 8s)
 
 Errors found:
 1. In drawing from piles, there is no remaining number of deck returned from the json,

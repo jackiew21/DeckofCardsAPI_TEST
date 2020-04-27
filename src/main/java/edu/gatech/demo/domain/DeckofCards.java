@@ -135,6 +135,14 @@ public class DeckofCards {
         return true;
     }
 
+    public static List<String> generateCodesFromCards(List<Card> cards) {
+        if (cards == null || cards.size() == 0) return new ArrayList<String>();
+        List<String> codes = new ArrayList<>();
+        for (Card card : cards)
+            codes.add(card.getCodeValue());
+        return codes;
+    }
+
     public static boolean verifyAllCards(List<Card> cards) {
         List<String> sample = new ArrayList<String>();
         for (Character suit : DeckofCards.suitMap.keySet()) {
